@@ -1,15 +1,24 @@
-<div class='new-question'>
-  <h3>Add a Question</h4>
-  <form action='' method='post'>
-    <input type='text' name='question[text]' placeholder='Question'>
-    <select name='question[type]'>
+<h3>Survey Name</h3>
+<button id='add'>Add a Question</button>
+<button id='done'>Done</button>
+<div id='new-question'>
+  <form id='define' action='' method='post'>
+    <input type='text' name='question[text]' placeholder='Question'><br>
+    <label for='question[type]'>Select Question Type</label>
+    <select id='type' name='question[type]'>
+      <option selected='selected'></option>
       <option value='McCheck'>Multiple Choice Checkbox</option>
       <option value='McRadio'>Multiple Choice Radio Button</option>
+      <option value='NumSlider'>1 to 10 Slider</option>
+      <option value='PercentSlider'>Percentage Slider</option>
       <option value='ShortResposne'>Short Response(s)</option>
       <option value='TextArea'>Text Area</option>
-    </select>
+    </select><br>
   </form>
-  <form action='' method='post'>
-    <input type='text' name='responses' placeholder='Option1, Option2, etc.'>
-  </form>
+</div>
+<button id='create'>Create</button>
+<button id='add-option'>Add Option</button>
+<div id='options'>
+</div>
+<div id='questions'>
 </div>
