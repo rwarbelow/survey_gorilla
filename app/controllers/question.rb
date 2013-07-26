@@ -17,3 +17,7 @@ end
 
 post '/survey/:survey_id/question/:question_id' do
 end
+
+get '/test' do
+  erb :"question/_create"
+end
