@@ -43,10 +43,28 @@
 
 $(document).ready(function(){
   $('#new-question').hide();
+  $('#create').hide();
+  $('#add-option').hide();
+
+  var option = $('<p><input type="text" name="response" placeholder="Option"></p>')
   
   $('#add').click(function(event){
     event.preventDefault();
-    $('#define').show();
-    console.log("here")
+    $('#new-question').show();
+    $('#type').change(function(){
+      var type = $(this).val();
+      if (type == 'TextArea') {
+        $('#add-option').hide();
+        $('#create').show();
+      }
+      if (type == 'McRadio' || type == 'McCheck') {
+        $('#create').hide();
+        $('#add-option').show();
+        $('#add-option').click(function(){
+          $('#add-option').after(option);
+          return false;
+        });
+      }
+    });
   });
 });
