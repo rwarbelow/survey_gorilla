@@ -5,13 +5,6 @@ end
 post '/survey/create' do
 end
 
-## Prompts user to type question, question type and number of response options
-get '/survey/create/:survey_id' do 
-end
-
-post '/survey/create/:survey_id' do
-end
-
 ## Edit a survey
 get '/survey/:survey_id/edit' do
 end
