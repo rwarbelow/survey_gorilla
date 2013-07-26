@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :surveys
-  has_many :votes, foreign_key: "email_address", primary_key: "email"
+  has_many :votes, foreign_key: "user_email", primary_key: "email"
 
   attr_accessor :password, :password_confirmation
 
