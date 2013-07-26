@@ -1,6 +1,6 @@
 ## Prompts user to type question, question type and number of response options
 get '/survey/create/:survey_id/add_question' do
-
+  
 
 end
 

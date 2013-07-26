@@ -18,6 +18,20 @@
   <title></title>
 </head>
 <body>
+  <% if current_user %>
+  <div id="nav">
+    <a href="/profile/<%= current_user.id %>" alt="Delete your profile">View your dashboard.</a> 
+  </div>
+  <% else %>
+  <div id="nav">
+    <span>
+    <a href="/register">Sign Up</a> ||
+    <a href="/login">Login</a>
+    </span>
+  </div>
+  <% end %>
+
+  
   <%= yield %>
 </body>
 </html>

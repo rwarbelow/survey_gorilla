@@ -1,3 +1,6 @@
 <div class="container">
-<a href="/register">Sign Up</a>
+  <h1>Welcome to SurveyGorilla!</h1>
+  <% @surveys.each do |survey| %>
+    <p><%= survey.title %></p>
+  <% end %>
 </div>
