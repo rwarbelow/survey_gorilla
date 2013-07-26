@@ -1,8 +1,18 @@
 ## Sign up // create a new user
 get '/register' do
+  erb :'user/register'
 end
 
 post '/register' do
+  @user = User.new(params[:user])
+  if @user.save
+    session[:id] = @user.id
+    redirect "/profile/#{@user.id}"
+  else
+    @errors = @user.errors.full_messages
+    erb :'user/register'
+  end
+
 end
 
 ## User Dashboard page
