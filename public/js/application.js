@@ -45,9 +45,8 @@ $(document).ready(function(){
   $('#new-question').hide();
   $('#create').hide();
   $('#add-option').hide();
+  $('#options').hide();
 
-  var option = $('<p><input type="text" name="response" placeholder="Option"></p>')
-  
   $('#add').click(function(event){
     event.preventDefault();
     $('#new-question').show();
@@ -55,14 +54,18 @@ $(document).ready(function(){
       var type = $(this).val();
       if (type == 'TextArea') {
         $('#add-option').hide();
+        $('#options').hide();
         $('#create').show();
       }
       if (type == 'McRadio' || type == 'McCheck') {
         $('#create').hide();
         $('#add-option').show();
+        $('#options').show();
         $('#add-option').click(function(){
-          $('#add-option').after(option);
-          return false;
+          $('#options').append($('<p id="option"><input type="text" name="response" placeholder="Option"><button id="remove">Remove</button></p>'));
+        });
+        $('#options').on('click', '#remove', function(){
+          $(this).parent().remove();
         });
       }
     });
