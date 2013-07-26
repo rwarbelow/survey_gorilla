@@ -5,6 +5,7 @@ class CreateSurveys < ActiveRecord::Migration
   		t.string :title, null: false
   		t.text :description
   		t.integer :status, default: 1
+      t.string :category
 
   		t.timestamps
   	end
