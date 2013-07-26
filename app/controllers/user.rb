@@ -24,6 +24,8 @@ get '/profile/:profile_id/edit' do
 end
 
 post '/profile/:profile_id/edit' do
+  current_user.edit_attributes(params[:user])
+  redirect "/profile/#{current_user.id}"
 end
 
 

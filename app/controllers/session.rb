@@ -8,4 +8,5 @@ end
 ## Log out
 post '/logout' do
   session[:id] = nil 
+  redirect '/'
 end 

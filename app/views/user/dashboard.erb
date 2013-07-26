@@ -2,6 +2,10 @@
 
 <a href="/profile/<%=current_user.id %>/edit">Edit your profile.</a> <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your profile.</a>
 
+<form action="/logout" method="post">
+  <input type="submit" value="Log out!">
+</form>
+
 <div id="create_survey">
   
 </div>
