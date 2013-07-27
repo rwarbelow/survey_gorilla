@@ -10,4 +10,8 @@ class McCheck < Question
     end
   end
 
+  def create_vote(answer)
+    
+  end
+
 end

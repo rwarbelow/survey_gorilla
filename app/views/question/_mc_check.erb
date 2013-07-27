@@ -1,5 +1,5 @@
 <p><%= question.text %></p>
 <% question.responses.each do |response| %>
-  <input type="checkbox" name="<%= response.id %>" value="<%= response.text %>" >
+  <input type="checkbox" name="survey[<%= question.id%>][]" value="<%= response.text %>" >
   <span><%= response.text %></span>
 <% end %>

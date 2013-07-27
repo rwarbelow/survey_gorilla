@@ -8,26 +8,6 @@ function resetForm(){
   $('#options p').remove();
 }
 
-function sort() {
-  $( "#sortable" ).sortable({ 
-    axis: "y",
-    start: function(event, ui) {
-      start = $(ui.item).index();
-    },
-    update: function(event, ui) {
-      item = $(ui.item).attr('id');
-      end = $(ui.item).index();
-
-      var sorted = $('#sortable').sortable("toArray");
-
-      $.post("/items/order", {order: sorted} );
-      console.log(sorted)
-    }
-  });
-  $("#sortable").disableSelection();
-};
-
-
 $(document).ready(function(){
   $('#new-question').hide();
   $('#create').hide();
