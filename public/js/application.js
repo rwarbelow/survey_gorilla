@@ -63,6 +63,7 @@ $(document).ready(function(){
       data['question']['type'] = $('#type').val();
       data['question']['text'] = $('#text').val();
       data['responses'] = responses;
+      console.log(url);
       $.post(url, data, function(response){
         $('#questions').append(response);
       });

@@ -1,7 +1,7 @@
 <div class='container'>
   <h3><%=@survey.title%></h3>
   <%= erb :"question/_create", layout: false, locals: {survey: @survey} %>
-  <div id='questions sortable'>
+  <div id='questions'>
     <% @survey.questions.each_with_index do |question, index| %>
       <div id='<%=question.id%>' class='question'>
         <span><%= index + 1 %></span>

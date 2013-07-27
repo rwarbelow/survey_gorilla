@@ -1,4 +1,4 @@
-<p><%= question.text %></p>
+<p><%= question.text %><form id='delete' action='/question/<%=question.id%>/delete' method='post'><input type='submit' value='Delete'></form><form id='edit' action='/question/<%=question.id%>/edit' method='get'><input type='submit' value='Edit'></form></p>
 <% question.responses.each do |response| %>
   <input type="radio" name="survey[<%= question.id %>]" value="<%= response.text %>" >
   <span><%= response.text %></span>
