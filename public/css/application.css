@@ -14,7 +14,7 @@ a:hover {
   text-decoration: overline underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, th {
   font-weight: 400;
 }
 
@@ -30,6 +30,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .center {
   text-align: center;
+}
+
+.italics {
+  font-style: oblique;
 }
 
 /************HEADER************/
@@ -120,6 +124,16 @@ header #nav {
   clear: both;
 }
 
+/* Survey Responses Overview Page */
+.survey_responses li {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.survey_responses li table {
+  font-weight: 400;
+}
+
 
 /************DBC SKELETON DEFAULTS************/
 .container {
@@ -128,6 +142,4 @@ header #nav {
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
-th {
-  text-align: left;
-}
+
