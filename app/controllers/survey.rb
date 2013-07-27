@@ -22,6 +22,8 @@ end
 
 ## Respond to a survey
 get '/survey/respond/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
+  erb :"survey/survey"
 end
 
 post '/survey/respond/:survey_id' do
