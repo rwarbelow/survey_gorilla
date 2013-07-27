@@ -1,3 +1,5 @@
 class TextArea < Question
-  # Remember to create a migration!
+  def partial
+    "question/_text_area"
+  end
 end

@@ -1,14 +1,13 @@
 ## Prompts user to type question, question type and number of response options
 get '/survey/create/:survey_id/add_question' do
-  
-
+  @survey = Survey.find(params[:survey_id])
+  erb :"survey/add_question"
 end
 
 post '/survey/create/:survey_id/add_question' do
   @survey = Survey.find(params[:survey_id])
-  @question = @survey.questions.create(params[:question])
-  Response.create_from_params(params[:responses], @question.id)
-  redirect to("/survey/create/#{@survey.id}/add_question")
+  @question = params[:question][:type].constantize.create(text: params[:question][:text])
+  erb :"#{@question.partial}", layout: false, locals: {question: @question}
 end
 
 ## Shows user his/her question and prompts for responses
@@ -16,12 +15,4 @@ get '/survey/:survey_id/question/:question_id' do
 end
 
 post '/survey/:survey_id/question/:question_id' do
-end
-
-get '/test' do
-  erb :"question/_create"
-end
-
-post '/test' do
-  p params
 end

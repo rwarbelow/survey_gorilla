@@ -1,3 +1,5 @@
 class ShortResponse < Question
-  # Remember to create a migration!
+  def partial
+    "question/_short"
+  end
 end

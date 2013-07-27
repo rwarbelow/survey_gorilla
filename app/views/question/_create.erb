@@ -4,8 +4,8 @@
   <button id='done'>Done</button>
 </div>
 <div id='new-question'>
-  <form id='define' action='/test' method='post'>
-    <input type='text' name='question[text]' placeholder='Question'><br>
+  <form id='define' action='/survey/create/<%=survey.id%>/add_question' method='post'>
+    <input id='text' type='text' name='question[text]' placeholder='Question'><br>
     <label for='question[type]'>Select Question Type</label>
     <select id='type' name='question[type]'>
       <option selected='selected'></option>
@@ -21,6 +21,4 @@
 <button id='create'>Create</button>
 <button id='add-option'>Add Option</button>
 <div id='options'>
-</div>
-<div id='questions'>
 </div>
