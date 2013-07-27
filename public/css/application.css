@@ -56,6 +56,12 @@ header #nav {
   margin-right: 10px;
 }
 
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
+
 
 /************CONTENT************/
 
