@@ -3,6 +3,8 @@ get '/survey/create' do
 end
 
 post '/survey/create' do
+  @survey = current_user.surveys.create(params[:survey])
+  redirect to("/survey/create/#{@survey.id}/add_question")
 end
 
 ## Edit a survey
