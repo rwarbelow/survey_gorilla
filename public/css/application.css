@@ -23,13 +23,47 @@ h1 {
   color:  #a64027;
 }
 
+.divider {
+  border-top: 1px dotted #222;
+}
+
 
 /************HEADER************/
+
+header {
+  background-color: #222;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  text-decoration: none;
+}
+
+header .brand {
+  margin-left: 10px;
+}
+
+header #nav {
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+}
 
 
 /************CONTENT************/
 
-
+#content {
+  background-color: red;
+  margin: 0px 5%;
+  min-width: 900px;
+}
 
 
 /************DBC SKELETON DEFAULTS************/
