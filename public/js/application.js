@@ -1,3 +1,14 @@
+function resetForm(){
+  $('#text').val('');
+  $('#type').val('');
+  $('#new-question').hide();
+  $('#add-question').show();
+  $('#create').hide();
+  $('#add-option').hide();
+  $('#options p').remove();
+}
+
+
 $(document).ready(function(){
   $('#new-question').hide();
   $('#create').hide();
@@ -7,12 +18,15 @@ $(document).ready(function(){
 
   $('#add').click(function(event){
     event.preventDefault();
+    event.stopPropagation();
     $('#add-question').hide();
     $('#new-question').show();
-    $('#type').change(function(){
+    $('#type').change(function(event){
+      event.stopPropagation();
       var type = $(this).val();
       if (type == 'TextArea' || type == 'NumSlider' || type == 'PercentSlider' || type == 'ShortResponse') {
         $('#add-option').hide();
+        $('#options p').remove();
         $('#options').hide();
         $('#responses').hide();
         $('#create').show();
@@ -22,10 +36,12 @@ $(document).ready(function(){
         $('#add-option').show();
         $('#options').show();
         $('#responses').hide();
-        $('#add-option').click(function(){
+        $('#add-option').click(function(event){
+          event.stopPropagation();
           $('#options').append($('<p id="option"><input type="text" name="response" placeholder="Option"><button id="remove">Remove</button></p>'));
         });
-        $('#options').on('click', '#remove', function(){
+        $('#options').on('click', '#remove', function(event){
+          event.stopPropagation();
           $(this).parent().remove();
         });
       }
@@ -36,18 +52,21 @@ $(document).ready(function(){
       //   $('#responses').show();
       // }
     });
-    $('#create').click(function(){
+    $('#create').click(function(event){
+      event.stopPropagation();
       var url = $('#define').attr('action');
       var responses = [];
       $('#options p input[name="response"]').each(function(){
         responses.push($(this).val());
       });
-      var data = $('#define').serializeArray();
-      debugger;
-      customData = jQuery.param(responses);
-      console.log(customData);
-      values = data + customData;
-      $.post(url, values, function(){});
+      var data = {question: {}};
+      data['question']['type'] = $('#type').val();
+      data['question']['text'] = $('#text').val();
+      data['responses'] = responses;
+      $.post(url, data, function(response){
+        $('#questions').append(response);
+      });
+      resetForm();
     });
   });
 });

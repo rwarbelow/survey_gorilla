@@ -1,3 +1,8 @@
 class McCheck < Question
-  # Remember to create a migration!
+
+  
+  def partial
+    "question/_mc_check"
+  end
+
 end
