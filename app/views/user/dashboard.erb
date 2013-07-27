@@ -1,15 +1,23 @@
-<a href="/profile/<%=current_user.id %>/edit">Edit your profile.</a> <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your profile.</a> 
+<div class="dash-nav">
+  <a href="/profile/<%=current_user.id %>/edit">Edit your profile.</a> 
+  <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your profile.</a>
+</div>
 
-<h1>Hi, <%= current_user.first_name %>!</h1>
+<h1 class="dash-welcome">Hi, <%= current_user.first_name %>!</h1>
 
-<div id="create_survey">
+<div id="create-survey">
+  <h2>Create A New Survey</h2>
+  <hr class="divider"/>
   
 </div>
 
-<div id="own_results">
+<div id="own-results">
+  <h2>Your Survey Results</h2>
+  <hr class="divider"/> 
   
 </div>
 
-<div id="participant_results">
-  
+<div id="participant-results">
+  <h2>Surveys You've Participated In</h2>
+  <hr class="divider"/>
 </div>
