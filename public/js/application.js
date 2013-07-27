@@ -8,7 +8,6 @@ function resetForm(){
   $('#options p').remove();
 }
 
-
 $(document).ready(function(){
   $('#new-question').hide();
   $('#create').hide();
