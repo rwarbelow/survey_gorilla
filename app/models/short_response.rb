@@ -3,7 +3,8 @@ class ShortResponse < Question
     "question/_short"
   end
 
-  def create_vote(answer)
-    
+  def create_vote(answer, email)
+    response = self.responses.create(text: answer)
+    response.votes.create(user_email: email)
   end
 end

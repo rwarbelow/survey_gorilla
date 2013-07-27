@@ -9,6 +9,9 @@
       <%= erb :"#{question.partial}", layout: false, locals: {question: question} %>
     </div>
   <% end %>
+    <% if !logged_in? %>
+      <input type='text' name='email' placeholder='E-Mail Address'>
+    <% end %>
     <input type='submit' value='Submit Survey'>
   </form>
 </div>

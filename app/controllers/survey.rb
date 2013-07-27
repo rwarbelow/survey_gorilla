@@ -29,7 +29,7 @@ end
 post '/survey/respond/:survey_id' do
   params[:survey].each do |question_id, answer|
     question = Question.find(question_id)
-    question.create_vote(answer)
+    question.create_vote(answer, params[:email])
   end
   redirect to('/')
 end
