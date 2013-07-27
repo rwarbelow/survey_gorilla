@@ -18,7 +18,8 @@
   <title></title>
 </head>
 <body>
-  <% if current_user %>
+<header> 
+    <% if current_user %>
   <div id="nav">
     <a href="/profile/<%= current_user.id %>" alt="Delete your profile">View your dashboard.</a> 
   </div>
@@ -30,8 +31,11 @@
     </span>
   </div>
   <% end %>
-
-  
+</header>
+<div id="content">
   <%= yield %>
+</div>
+<footer>
+</footer>
 </body>
 </html>
