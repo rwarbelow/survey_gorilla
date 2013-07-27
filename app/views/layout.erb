@@ -10,29 +10,32 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <script src="/js/header.js"></script>
 
   <title></title>
 </head>
 <body>
-<header> 
-    <span class="brand">
-      <a href='/' alt="home">SurveyGorilla</a>
-    </span>
-     <div id="nav">
-    <% if current_user %>
-    <a href="/profile/<%= current_user.id %>" alt="Delete your profile">Dashboard</a> 
-  <% else %>
-    <span>
-    <a href="/register">Sign Up</a> ||
-    <a href="/login">Login</a>
-    </span>
-  <% end %>
+<div class="persist-area">
+  <header class="persist-header"> 
+      <span class="brand">
+        <a href='/' alt="home">SurveyGorilla</a>
+      </span>
+       <div id="nav">
+      <% if current_user %>
+      <a href="/profile/<%= current_user.id %>" alt="Delete your profile">Dashboard</a> 
+    <% else %>
+      <span>
+      <a href="/register">Sign Up</a> ||
+      <a href="/login">Login</a>
+      </span>
+    <% end %>
+    </div>
+  </header>
+  <div id="content">
+    <%= yield %>
   </div>
-</header>
-<div id="content">
-  <%= yield %>
+  <footer>
+  </footer>
 </div>
-<footer>
-</footer>
 </body>
 </html>
