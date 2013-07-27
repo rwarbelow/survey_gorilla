@@ -8,11 +8,25 @@
 <div id="create-survey">
   <h2>Create A New Survey</h2>
   <hr class="divider"/>
-  
+  <% if @errors %>
+    <% @errors.each do |error| %>
+      <p class="center errors"><%= error %></p>
+   <% end %>
+  <% end %>
+  <form action="/survey/create" method="POST">
+    <label for="title">Title:
+    <input type="text" name="title" placeholder="Survey Title">
+    </label>
+    <label for="description">Description:
+    <input type="text" name="description" placeholder="Survey Description">
+    </label>
+    <input type="submit" value="Let's go!">
+  </form>
 </div>
 
 <div id="own-results">
   <h2>Your Survey Results</h2>
+  
   <hr class="divider"/> 
   
 </div>

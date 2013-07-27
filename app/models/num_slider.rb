@@ -8,3 +8,4 @@ class NumSlider < Question
     response.votes.create(user_email: email)
   end
 end
+
