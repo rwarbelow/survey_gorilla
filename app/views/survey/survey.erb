@@ -12,6 +12,7 @@
     <% if !logged_in? %>
       <input type='text' name='email' placeholder='E-Mail Address'>
     <% end %>
+    <input type='hidden' name='email' value='<%=current_user.email%>'>
     <input type='submit' value='Submit Survey'>
   </form>
 </div>
