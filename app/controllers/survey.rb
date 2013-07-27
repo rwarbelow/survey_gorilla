@@ -1,10 +1,12 @@
 ## Set up survey (title & description)
-get '/survey/create' do
-end
-
 post '/survey/create' do
-  @survey = current_user.surveys.create(params[:survey])
-  redirect to("/survey/create/#{@survey.id}/add_question")
+  @survey = Survey.new(title: params[:title], description: params[:description], creator_id: current_user.id)
+  if @survey.save
+    redirect "/survey/create/#{@survey.id}/add_question"
+  else
+    @errors = @survey.errors.full_messages
+    erb :'user/dashboard'
+  end
 end
 
 ## Edit a survey
@@ -38,5 +40,7 @@ end
 
 ## View survey results
 get '/survey/results/:survey_id' do
+  @survey = Survey.find(params[:survey_id])
+  erb :"survey/survey_results"
 end
 

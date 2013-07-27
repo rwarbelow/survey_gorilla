@@ -14,5 +14,5 @@ class McRadio < Question
     response = Response.find_by_text_and_question_id(answer, self.id)
     response.votes.create(user_name: email)
   end
-
+  
 end
