@@ -1,9 +1,9 @@
 <div class='container'>
   <h3><%=@survey.title%></h3>
   <%= erb :"question/_create", layout: false, locals: {survey: @survey} %>
-  <div id='questions'>
+  <div id='questions sortable'>
     <% @survey.questions.each_with_index do |question, index| %>
-      <div class='question'>
+      <div id='<%=question.id%>' class='question'>
         <span><%= index + 1 %></span>
         <%= erb :"#{question.partial}", layout: false, locals: {question: question} %>
       </div>
