@@ -16,27 +16,27 @@ $(document).ready(function(){
   $('#options').hide();
   $('#responses').hide();
 
-  $('#add').click(function(event){
+  $('#add').on('click', function(event){
     event.preventDefault();
     event.stopPropagation();
     $('#add-question').hide();
     $('#new-question').show();
-    $('#type').change(function(event){
+    $('#type').on('change', function(event){
       event.stopPropagation();
+      $('#create').show();
       var type = $(this).val();
       if (type == 'TextArea' || type == 'NumSlider' || type == 'PercentSlider' || type == 'ShortResponse') {
         $('#add-option').hide();
         $('#options p').remove();
         $('#options').hide();
         $('#responses').hide();
-        $('#create').show();
       }
       if (type == 'McRadio' || type == 'McCheck') {
-        $('#create').show();
         $('#add-option').show();
         $('#options').show();
         $('#responses').hide();
-        $('#add-option').click(function(event){
+        $('#add-option').off();
+        $('#add-option').on('click', function(event){
           event.stopPropagation();
           $('#options').append($('<p id="option"><input type="text" name="response" placeholder="Option"><button id="remove">Remove</button></p>'));
         });
@@ -52,7 +52,8 @@ $(document).ready(function(){
       //   $('#responses').show();
       // }
     });
-    $('#create').click(function(event){
+    $('#create').off();
+    $('#create').on('click', function(event){
       event.stopPropagation();
       var url = $('#define').attr('action');
       var responses = [];
