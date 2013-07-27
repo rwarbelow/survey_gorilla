@@ -22,7 +22,8 @@
       </span>
        <div id="nav">
       <% if current_user %>
-      <a href="/profile/<%= current_user.id %>" alt="Delete your profile">Dashboard</a> 
+      <a href="/profile/<%= current_user.id %>" alt="Delete your profile">Dashboard</a>  || 
+      <a href="/logout" alt="Log out of your account">Logout</a>
     <% else %>
       <span>
       <a href="/register">Sign Up</a> ||
