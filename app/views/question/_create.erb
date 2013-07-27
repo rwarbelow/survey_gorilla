@@ -1,7 +1,7 @@
 <h3>Survey Name</h3>
 <div id='add-question'>
+  <form action="/survey/respond/<%= @survey.id %>" method='get'><input type='submit' value='Publish Survey'></form>
   <button id='add'>Add a Question</button>
-  <a href="/survey/respond/<%= @survey.id %>"<button id='done'>Done</button></a>
 </div>
 <div id='new-question'>
   <form id='define' action='/survey/create/<%=survey.id%>/add_question' method='post'>
@@ -22,3 +22,4 @@
 <button id='add-option'>Add Option</button>
 <div id='options'>
 </div>
+

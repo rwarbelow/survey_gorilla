@@ -1,4 +1,8 @@
 ## Prompts user to type question, question type and number of response options
+get '/question/:question_id/edit' do
+
+end
+
 get '/survey/create/:survey_id/add_question' do
   @survey = Survey.find(params[:survey_id])
   erb :"survey/add_question"
@@ -11,9 +15,10 @@ post '/survey/create/:survey_id/add_question' do
   erb :"#{@question.partial}", layout: false, locals: {question: @question}
 end
 
-## Shows user his/her question and prompts for responses
-get '/survey/:survey_id/question/:question_id' do
+post '/question/:question_id/edit' do
+  
 end
 
-post '/survey/:survey_id/question/:question_id' do
+post '/question/:question_id/delete' do
+  
 end
