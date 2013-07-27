@@ -1,3 +1,5 @@
-<div id='radio'>
-  <p><%=question.text%></p>
-</div>
+<p><%= question.text %></p>
+<% question.responses.each do |response| %>
+  <input type="radio" name="<%= response.id %>" value="<%= response.text %>" >
+  <span><%= response.text %></span>
+<% end %>
