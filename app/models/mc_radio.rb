@@ -10,6 +10,7 @@ class McRadio < Question
     end
   end
 
+  #KEEPING FOR POSTERITY//CODE REVIEW --- RACHEL & KATHERINE'S OVERCOMPLEX SOLUTION TO AN EASY PROBLEM
   # def count_votes_per_response
   #   num_responses = self.responses.count
   #   vote_count = []
@@ -27,6 +28,5 @@ class McRadio < Question
   #   end
   #   response_text
   # end
-
 
 end

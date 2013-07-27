@@ -1,13 +1,18 @@
 <h1><%= @survey.title%></h1>
 <h2><%= @survey.description %></h2>
-<ol>
+<hr class='divider'/>
+<ol class="survey_responses">
 <% @survey.questions.each do |question| %>
-  <li><%= question.text %>
+  <li><p><%= question.text %></p>
+  <table>
+   <th>Response</th>
+   <th>Response Count</th>
   <% question.responses.each do |response| %>
   <tr>
     <td><%= response.text %></td>
     <td><%= response.votes.count %></td>
   </tr>
   <% end %></li>
+</table>
 <% end %>
 </ol>
