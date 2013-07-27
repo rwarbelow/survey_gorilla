@@ -7,7 +7,7 @@ end
 post '/survey/create/:survey_id/add_question' do
   @survey = Survey.find(params[:survey_id])
   @question = params[:question][:type].constantize.create(text: params[:question][:text], survey_id: @survey.id)
-  @question.create_responses(params[:responses])
+  @question.create_responses(params[:responses]) if @question.type == 'McRadio' || @question.type == 'McCheck'
   erb :"#{@question.partial}", layout: false, locals: {question: @question}
 end
 

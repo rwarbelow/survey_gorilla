@@ -1,4 +1,2 @@
 <p><%= question.text %></p>
-<% question.responses.each do |response| %>
-  <input type="range" name="<%= response.id %>" min="0" max="100">
-<% end %>
+<input type="range" name="<%= question.id %>" min="0" max="100">

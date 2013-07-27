@@ -1,4 +1,4 @@
-class PercentSlider < Question
+class NumSlider < Question
 
 
   def partial
