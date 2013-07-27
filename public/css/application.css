@@ -1,3 +1,95 @@
+/************BASE STRUCTURE: STYLING OF PARENT LEVEL ELEMENTS************/
+body {
+  color: #222;
+  font-family: 'Vollkorn', serif;
+}
+
+a {
+  color: #41a30d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: overline underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+
+/************BASE STYLES: ERRORS, DIVIDERS, ETC.************/
+.errors {
+  color:  #a64027;
+}
+
+.divider {
+  border-top: 1px dotted #222;
+}
+
+/************HEADER************/
+
+header {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 0px;
+  width: 100%;
+}
+
+header a {
+  color: #fff;
+}
+
+header a:hover {
+  text-decoration: none;
+}
+
+header .brand {
+  margin-left: 10px;
+}
+
+header #nav {
+  display: inline;
+  margin-right: 10px;
+}
+
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+
+/************CONTENT************/
+
+#content {
+  margin: 0px 5%;
+  min-width: 500px;
+}
+
+
+/* User Forms */
+
+
+/* User Dashboard */
+.dash-nav {
+  float: right;
+  display: inline;
+  margin: 1.75em 0px;
+}
+
+.dash-welcome {
+  float: left;
+  display: inline;
+}
+
+#create-survey {
+  clear: both;
+}
+
+
+/************DBC SKELETON DEFAULTS************/
 .container {
   margin: 20px auto;
   width: 600px;
@@ -6,8 +98,4 @@
 }
 th {
   text-align: left;
-}
-
-#nav {
-  float: right;
 }
