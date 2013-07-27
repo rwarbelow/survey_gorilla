@@ -10,4 +10,11 @@ class McCheck < Question
     end
   end
 
+  def create_vote(answer, email)
+    answer.each do |answer|
+      response = Response.find_by_text_and_question_id(answer, self.id)
+      response.votes.create(user_email: email)
+    end
+  end
+
 end
