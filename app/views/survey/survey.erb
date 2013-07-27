@@ -1,0 +1,12 @@
+<div class='container'>
+<h3><%=@survey.title%></h3>
+<p><%=@survey.description%></h3>
+<div class='questions'>
+  <% @survey.questions.each_with_index do |question, index| %>
+    <div class='question'>
+      <span><%= index + 1%></span>
+      <%= erb :"#{question.partial}", layout: false, locals: {question: question} %>
+    </div>
+  <% end %>
+</div>
+</div>
