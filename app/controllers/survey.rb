@@ -1,8 +1,10 @@
 ## Set up survey (title & description)
 get '/survey/create' do
+  erb :new_survey
 end
 
 post '/survey/create' do
+  
 end
 
 ## Edit a survey

@@ -8,6 +8,15 @@
 <div id="create-survey">
   <h2>Create A New Survey</h2>
   <hr class="divider"/>
+  <form action="/survey/create" method="POST">
+    <label for="title">Title:
+    <input type="text" name="title" placeholder="Survey Title">
+    </label>
+    <label for="description">Description:
+    <input type="text" name="description" placeholder="Survey Description">
+    </label>
+    <input type="submit" value="Let's go!">
+  </form>
   
 </div>
 
