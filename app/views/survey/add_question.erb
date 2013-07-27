@@ -2,5 +2,11 @@
   <h3><%=@survey.title%></h3>
   <%= erb :"question/_create", layout: false, locals: {survey: @survey} %>
   <div id='questions'>
+    <% @survey.questions.each_with_index do |question, index| %>
+      <div class='question'>
+        <span><%= index + 1 %></span>
+        <%= erb :"#{question.partial}", layout: false, locals: {question: question} %>
+      </div>
+    <% end %>
   </div>
 </div>
