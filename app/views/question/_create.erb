@@ -1,8 +1,10 @@
 <h3>Survey Name</h3>
-<button id='add'>Add a Question</button>
-<button id='done'>Done</button>
+<div id='add-question'>
+  <button id='add'>Add a Question</button>
+  <button id='done'>Done</button>
+</div>
 <div id='new-question'>
-  <form id='define' action='' method='post'>
+  <form id='define' action='/test' method='post'>
     <input type='text' name='question[text]' placeholder='Question'><br>
     <label for='question[type]'>Select Question Type</label>
     <select id='type' name='question[type]'>
@@ -11,7 +13,7 @@
       <option value='McRadio'>Multiple Choice Radio Button</option>
       <option value='NumSlider'>1 to 10 Slider</option>
       <option value='PercentSlider'>Percentage Slider</option>
-      <option value='ShortResposne'>Short Response(s)</option>
+      <option value='ShortResponse'>Short Response</option>
       <option value='TextArea'>Text Area</option>
     </select><br>
   </form>

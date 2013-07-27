@@ -21,3 +21,7 @@ end
 get '/test' do
   erb :"question/_create"
 end
+
+post '/test' do
+  p params
+end
