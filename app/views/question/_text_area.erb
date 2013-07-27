@@ -1,0 +1,5 @@
+<p><%= question.text %></p>
+<% question.responses.each do |response| %>
+  <textarea name="<%= response.id %>" cols="30" rows="10">
+  </textarea>
+<% end %>

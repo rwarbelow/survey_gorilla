@@ -6,7 +6,8 @@ end
 
 post '/survey/create/:survey_id/add_question' do
   @survey = Survey.find(params[:survey_id])
-  @question = params[:question][:type].constantize.create(text: params[:question][:text])
+  @question = params[:question][:type].constantize.create(text: params[:question][:text], survey_id: @survey.id)
+  @question.create_responses(params[:responses])
   erb :"#{@question.partial}", layout: false, locals: {question: @question}
 end
 
