@@ -62,11 +62,6 @@ label {
   font-size: 18px;
 }
 
-#sign-up input {
-  padding: 20px 30px;
-  font-size: 1.5em;
-}
-
 
 /************BASE STYLES: ERRORS, DIVIDERS, ETC.************/
 .errors {
@@ -139,6 +134,26 @@ header #nav {
 
 .submit-survey input[type=text] {
   width: 300px;
+}
+
+
+/* Home Page */
+#sign-up input {
+  padding: 20px 30px;
+  font-size: 1.5em;
+}
+
+.welcome {
+  margin: 60px 0px;
+}
+
+.welcome h1, .welcome h3 {
+  display: inline;
+}
+
+.welcome h3 {
+ float: right;
+ margin-top: 3px;
 }
 
 

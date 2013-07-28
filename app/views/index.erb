@@ -1,14 +1,25 @@
-<h1>Welcome to SurveyGorilla!</h1>
+<div class="welcome">
+  <h1>Welcome to SurveyGorilla!</h1>
+  <h3 class="tagline italics">Survey creation so simple even a monkey could do it.</h3>
+</div>
+
 <form id='sign-up' action='/register' method='get'><input type='submit' value="Sign Up to create surveys, and see survey results!"></form>
+<h2>Already a member? <a href="" alt="Log in to your account">Login to your account</a>
+
+<% if @new_surveys %>
 <div class='survey-category'>
   <h2>Check out these new surveys.</h2>
   <% @new_surveys.each do |survey| %>
     <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, created <%=survey.created_at.strftime('%B %d')%></p>
   <% end %>
 </div>
+<% end %>
+
+<% if @popular_surveys %>
 <div class='survey-category'>
   <h2>These surveys are super popular.</h2>
   <% @popular_surveys.each do |survey| %>
     <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, <%=survey.participant_count%> responses</p>
   <% end %>
 </div>
+<% end %>
