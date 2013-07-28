@@ -28,21 +28,26 @@
   <h2>Your Surveys</h2>
   <hr class="divider"/>
   <table class="your-surveys">
+    <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+    </thead>
   <% @surveys.each do | survey | %>
   <tr>
     <td><%= survey.title %></td>
     <td><%= survey.description %></td>
     <td>
-      <a href="/survey/respond/<%= survey.id %>" alt"View the results of <%= survey.title %>">
-        View Survey
-      </a>
-    </td>
-    <td>
       <a href="/survey/results/<%= survey.id %>" alt"View the results of <%= survey.title %>">
         View Results
       </a>
     </td>
-    <td>Edit</td>
+    <td>
+      <a href="/survey/create/<%= survey.id %>/add_question" alt"Edit <%= survey.title %>">
+        Edit Survey
+      </a>
+    </td>
   </tr>
   <% end %>
   </table>
@@ -53,4 +58,24 @@
 <div id="participant-results">
   <h2>Surveys You've Participated In</h2>
   <hr class="divider"/>
+  <table class="your-surveys">
+    <thead>
+      <th>Title</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+    </thead>
+  <% current_user.taken_surveys.each do | survey | %>
+  <tr>
+    <td><%= survey.title %></td>
+    <td><%= survey.description %></td>
+    <td>
+      <a href="/survey/results/<%= survey.id %>" alt"View the results of <%= survey.title %>">
+        View Results
+      </a>
+    </td>
+    <td></td>
+  </tr>
+  <% end %>
+  </table>
 </div>
