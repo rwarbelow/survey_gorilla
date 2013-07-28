@@ -14,10 +14,13 @@
     <input type="text" name="user[last_name]" placeholder="Last Name" required>
   </label>
   <label for="user[email]"> Email:
-    <input type="email" name="user[email]" placeholder="Email">
+    <input type="email" name="user[email]" placeholder="Email" required pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$" title="We require a valid email address to keep track of your surveys.">
   </label>
   <label for="user[password]"> Password: 
     <input type="password" name="user[password]" placeholder="Password" required>
+  </label>
+  <label for="user[password_confirmation]"> Password Confirmation: 
+    <input type="password" name="user[password_confirmation]" placeholder="Password Confirmation" required>
   </label>
   <input type="submit" value="Join!">
 </form>
