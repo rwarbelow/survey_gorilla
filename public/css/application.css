@@ -85,7 +85,7 @@ label {
   font-style: oblique;
 }
 
-/************HEADER************/
+/************HEADER AND FOOTER************/
 
 header {
   background-color: #222;
@@ -131,6 +131,14 @@ header #nav {
 .survey-category {
   float: left;
   width: 50%;
+}
+
+.submit-survey {
+  margin-top: 20px;
+}
+
+.submit-survey input[type=text] {
+  width: 300px;
 }
 
 
