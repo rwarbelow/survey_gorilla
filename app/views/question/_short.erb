@@ -1,2 +1,6 @@
-<p><%= question.text %><form id='delete' action='/question/<%=question.id%>/delete' method='post'><input type='submit' value='Delete'></form><form id='edit' action='/question/<%=question.id%>/edit' method='get'><input type='submit' value='Edit'></form></p>
+<p><%= question.text %>
+  <% if session[:id] == question.survey.creator_id %>
+  <form id='delete' action='/question/<%=question.id%>/delete' method='post'><input type='submit' value='Delete'></form><form id='edit' action='/question/<%=question.id%>/edit' method='get'><input type='submit' value='Edit'></form>
+  <% end %>
+</p>
 <input type="text" name="survey[<%= question.id %>]">
