@@ -1,5 +1,14 @@
 <h1>Welcome to SurveyGorilla!</h1>
-
-  <% @surveys.each do |survey| %>
-    <p><%= survey.title %></p>
+<form id='sign-up' action='/register' method='get'><input type='submit' value="Sign Up to create surveys, and see survey results!"></form>
+<div class='survey-category'>
+  <h2>Check out these new surveys.</h2>
+  <% @new_surveys.each do |survey| %>
+    <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, created <%=survey.created_at.strftime('%B %d')%></p>
   <% end %>
+</div>
+<div class='survey-category'>
+  <h2>These surveys are super popular.</h2>
+  <% @popular_surveys.each do |survey| %>
+    <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, <%=survey.participant_count%> responses</p>
+  <% end %>
+</div>
