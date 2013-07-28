@@ -1,5 +1,13 @@
 <h1>Welcome to SurveyGorilla!</h1>
-
-  <% @surveys.each do |survey| %>
+<div class='new-surveys'>
+  <h2>Check out these new surveys.</h2>
+  <% @new_surveys.each do |survey| %>
     <p><%= survey.title %></p>
   <% end %>
+</div>
+<div class='popular-surveys'>
+  <h2>These surveys are super popular.</h2>
+  <% @popular_surveys.each do |survey| %>
+    <p><%= survey.title %></p>
+  <% end %>
+</div>

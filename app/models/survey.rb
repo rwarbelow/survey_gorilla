@@ -10,4 +10,9 @@ class Survey < ActiveRecord::Base
     self.votes.map(&:user_email).uniq
   end
 
+  def add_count
+    self.participant_count += 1
+    self.save
+  end
+
 end
