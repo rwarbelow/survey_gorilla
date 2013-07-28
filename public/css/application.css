@@ -61,6 +61,11 @@ label {
   font-size: 18px;
 }
 
+#sign-up input {
+  padding: 20px 30px;
+  font-size: 1.5em;
+}
+
 
 /************BASE STYLES: ERRORS, DIVIDERS, ETC.************/
 .errors {
@@ -120,6 +125,11 @@ header #nav {
 #content {
   margin: 40px 5% 0px 5%;
   min-width: 600px;
+}
+
+.survey-category {
+  float: left;
+  width: 50%;
 }
 
 
