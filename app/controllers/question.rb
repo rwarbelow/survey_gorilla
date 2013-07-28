@@ -20,5 +20,7 @@ post '/question/:question_id/edit' do
 end
 
 post '/question/:question_id/delete' do
-  
+  @question = Question.find(params[:question_id])
+  @question.destroy
+  redirect to("/survey/create/#{@question.survey.id}/add_question")
 end
