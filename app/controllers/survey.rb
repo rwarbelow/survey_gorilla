@@ -35,6 +35,7 @@ post '/survey/respond/:survey_id' do
     question = Question.find(question_id)
     question.create_vote(answer, params[:email])
   end
+  Survey.find(params[:survey_id]).add_count
   redirect to('/')
 end
 

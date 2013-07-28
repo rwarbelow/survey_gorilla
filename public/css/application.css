@@ -41,6 +41,7 @@ tr:nth-child(odd) {
 
 th {
   font-style: oblique;
+  text-align: left;
 }
 
 /* FORM STYLES */
@@ -61,6 +62,11 @@ label {
   font-size: 18px;
 }
 
+#sign-up input {
+  padding: 20px 30px;
+  font-size: 1.5em;
+}
+
 
 /************BASE STYLES: ERRORS, DIVIDERS, ETC.************/
 .errors {
@@ -79,7 +85,7 @@ label {
   font-style: oblique;
 }
 
-/************HEADER************/
+/************HEADER AND FOOTER************/
 
 header {
   background-color: #222;
@@ -120,6 +126,19 @@ header #nav {
 #content {
   margin: 40px 5% 0px 5%;
   min-width: 600px;
+}
+
+.survey-category {
+  float: left;
+  width: 50%;
+}
+
+.submit-survey {
+  margin-top: 20px;
+}
+
+.submit-survey input[type=text] {
+  width: 300px;
 }
 
 
@@ -223,6 +242,14 @@ header #nav {
   width: 100%;
 }
 
+.question {
+  margin-top: 20px;
+}
+
+.question form {
+  margin-top: 10px;
+}
+
 #add-question input[type=submit] {
   float: left;
   margin-right: 20px;
@@ -241,7 +268,15 @@ header #nav {
 }
 
 #questions input:not([type=submit]) {
-  width: 100%;
+  width: 50%;
+}
+
+#questions input[type=radio] {
+  width: 20px;
+}
+
+#questions input[type=checkbox] {
+  width: 20px;
 }
 
 #questions input[type=submit] {
