@@ -5,6 +5,13 @@ body {
   font-size: 16px;
 }
 
+::selection {
+  background: #00E600; /* Safari */
+  }
+::-moz-selection {
+  background: #00E600; /* Firefox */
+}
+
 a {
   color: #41a30d;
   text-decoration: none;
@@ -86,16 +93,18 @@ header a {
 }
 
 header a:hover {
+  color: #41a30d;
   text-decoration: none;
 }
 
 header .brand {
-  margin-left: 10px;
+  margin-left: 5%;
 }
 
 header #nav {
+  float: right;
   display: inline;
-  margin-right: 10px;
+  margin-right: 5%;
 }
 
 .floatingHeader {

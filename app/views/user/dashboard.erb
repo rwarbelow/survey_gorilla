@@ -33,6 +33,11 @@
     <td><%= survey.title %></td>
     <td><%= survey.description %></td>
     <td>
+      <a href="/survey/respond/<%= survey.id %>" alt"View the results of <%= survey.title %>">
+        View Survey
+      </a>
+    </td>
+    <td>
       <a href="/survey/results/<%= survey.id %>" alt"View the results of <%= survey.title %>">
         View Results
       </a>
