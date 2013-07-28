@@ -23,16 +23,28 @@
     <input type="submit" value="Let's go!">
   </form>
 </div>
-<hr class="divider"/>
+
 <div id="own-results">
   <h2>Your Surveys</h2>
-  <ul>
-    <% @surveys.each do | survey | %>
-      <li><%= survey.title %></li>
-    <% end %>
-  </ul> 
+  <hr class="divider"/>
+  <table class="your-surveys">
+  <% @surveys.each do | survey | %>
+  <tr>
+    <td><%= survey.title %></td>
+    <td><%= survey.description %></td>
+    <td>
+      <a href="/survey/results/<%= survey.id %>" alt"View the results of <%= survey.title %>">
+        View Results
+      </a>
+    </td>
+    <td>Edit</td>
+  </tr>
+  <% end %>
+  </table>
 </div>
-<hr class="divider"/> 
+ 
+
+
 <div id="participant-results">
   <h2>Surveys You've Participated In</h2>
   <hr class="divider"/>

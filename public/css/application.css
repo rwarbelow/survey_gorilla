@@ -38,13 +38,12 @@ th {
 
 /* FORM STYLES */
 
-input[type=submit] {
+input[type=submit], button {
   background-color: #222;
   border: none;
   color: #fff;
   margin: auto;
-  padding: 5px 0px;
-  text-transform: uppercase;
+  padding: 5px 4px;
 }
 
 input[type=submit]:hover {
@@ -136,6 +135,7 @@ header #nav {
 }
 
 /* User Dashboard */
+/* Welcome Message */
 .dash-nav {
   float: right;
   display: inline;
@@ -147,12 +147,15 @@ header #nav {
   display: inline;
 }
 
+/* User Dashboard */
+/* Create A New Survey */
+
 #create-survey {
   clear: both;
 }
 
 #create-survey form {
-    padding: 50px 0px;
+    padding: 30px 0px;
 }
 
 #create-survey input {
@@ -164,6 +167,13 @@ header #nav {
 #create-survey input[type=submit] {
   margin-top: 20px;
   width: 10%;
+}
+
+/* User Dashboard */
+/* Your Surveys */
+.your-surveys {
+  margin: 30px 0px;
+  width: 100%;
 }
 
 /* Survey Responses Overview Page */
@@ -198,6 +208,36 @@ header #nav {
   font-weight: 400;
 }
 
+/************CREATE QUESTIONS************/
+
+#new-question input:not([type=submit]) {
+  width: 100%;
+}
+
+#add-question input[type=submit] {
+  float: left;
+  margin-right: 20px;
+}
+
+#add-question button {
+  display: inline;
+}
+
+#questions {
+  margin-top: 20px;
+}
+
+#questions p {
+  display: inline;
+}
+
+#questions input:not([type=submit]) {
+  width: 100%;
+}
+
+#questions input[type=submit] {
+  float: right;
+}
 
 /************DBC SKELETON DEFAULTS************/
 .container {
