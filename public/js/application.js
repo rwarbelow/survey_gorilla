@@ -70,4 +70,12 @@ $(document).ready(function(){
       resetForm();
     });
   });
+  $('#delete').off();
+  $('#delete').on('submit', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    var url = $(this).attr('action');
+    $(this).closest('.question').parent().remove();
+    $.post(url);
+  });
 });
