@@ -44,7 +44,7 @@ th {
   text-align: left;
 }
 
-/* FORM STYLES */
+/* MASTER FORM STYLES */
 
 input[type=submit], button {
   background-color: #222;
@@ -58,13 +58,18 @@ input[type=submit]:hover {
   background-color: #41a30d;
 }
 
-label {
-  font-size: 18px;
+input[type=range] {
+  background-color: #41a30d;
+  color: #41a30d;
 }
 
-#sign-up input {
-  padding: 20px 30px;
-  font-size: 1.5em;
+input:focus, textarea:focus {
+  border: 3px solid #41a30d;
+  outline: none;
+}
+
+label {
+  font-size: 18px;
 }
 
 
@@ -87,27 +92,29 @@ label {
 
 /************HEADER AND FOOTER************/
 
-header {
+/* Header */
+
+header, footer {
   background-color: #222;
   color: #fff;
   padding: 10px 0px;
   width: 100%;
 }
 
-header a {
+header a, footer a {
   color: #fff;
 }
 
-header a:hover {
+header a:hover, footer a:hover {
   color: #41a30d;
   text-decoration: none;
 }
 
-header .brand {
+header .brand, footer p {
   margin-left: 5%;
 }
 
-header #nav {
+header #nav, footer nav {
   float: right;
   display: inline;
   margin-right: 5%;
@@ -118,6 +125,18 @@ header #nav {
   top: 0;
   visibility: hidden;
   width: 100%;
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  display: inline;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 
@@ -139,6 +158,26 @@ header #nav {
 
 .submit-survey input[type=text] {
   width: 300px;
+}
+
+
+/* Home Page */
+#sign-up input {
+  padding: 20px 30px;
+  font-size: 1.5em;
+}
+
+.welcome {
+  margin: 60px 0px;
+}
+
+.welcome h1, .welcome h3 {
+  display: inline;
+}
+
+.welcome h3 {
+ float: right;
+ margin-top: 3px;
 }
 
 
@@ -260,11 +299,9 @@ header #nav {
 }
 
 #questions {
-  margin-top: 20px;
-}
-
-#questions p {
-  display: inline;
+  margin-top: 50px;
+  padding: 0;
+  padding-left: 20px;
 }
 
 #questions input:not([type=submit]) {

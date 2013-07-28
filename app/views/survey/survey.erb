@@ -1,5 +1,6 @@
 <h1><%=@survey.title%></h1>
 <h2 class="italics"><%= @survey.description %></h2>
+
 <ol id='questions'>
   <form action ='/survey/respond/<%=@survey.id%>' method='post'>
   <% @survey.questions.each_with_index do |question, index| %>
@@ -7,11 +8,13 @@
   <% end %>
   <div class='submit-survey'>
     <% if !logged_in? %>
-      <input type='text' name='email' placeholder='E-Mail Address'>
+      <label for="email">Email Address:
+        <input type='text' name='email' placeholder='E-Mail Address'>
+     </label>
     <% else %>
       <input type='hidden' name='email' value='<%=current_user.email%>'>
     <% end %>
-    <input type='submit' value='Submit Survey'>
+    <input type='submit' value='Submit Your Responses'>
   </div>
   </form>
 </ol>
