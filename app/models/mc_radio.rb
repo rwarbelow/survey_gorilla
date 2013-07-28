@@ -12,7 +12,7 @@ class McRadio < Question
 
   def create_vote(answer, email)
     response = Response.find_by_text_and_question_id(answer, self.id)
-    response.votes.create(user_name: email)
+    response.votes.create(user_email: email)
   end
   
 end

@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :surveys
+  has_many :surveys, class_name: "Survey", foreign_key: 'creator_id', primary_key: 'id'
   has_many :votes, foreign_key: "user_email", primary_key: "email"
 
   attr_accessor :password, :password_confirmation
@@ -28,6 +28,10 @@ class User < ActiveRecord::Base
     params.tap { |item| item.delete(:password) } if params[:password].nil?
     self.update_attributes(params)
     self.save
+  end
+
+  def taken_surveys
+    self.votes.map(&:survey).uniq
   end
   
 end
