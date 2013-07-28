@@ -1,6 +1,6 @@
 <div class="dash-nav">
-  <a href="/profile/<%=current_user.id %>/edit">Edit your profile.</a> 
-  <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your profile.</a>
+  <a href="/profile/<%=current_user.id %>/edit">Edit your information</a> |
+  <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your account</a>
 </div>
 
 <h1 class="dash-welcome">Hi, <%= current_user.first_name %>!</h1>
@@ -13,7 +13,7 @@
       <p class="center errors"><%= error %></p>
    <% end %>
   <% end %>
-  <form action="/survey/create" method="POST">
+  <form action="/survey/create" method="POST" class="dashboard-create">
     <label for="title">Title:
     <input type="text" name="title" placeholder="Survey Title">
     </label>
@@ -25,11 +25,30 @@
 </div>
 
 <div id="own-results">
-  <h2>Your Survey Results</h2>
-  
-  <hr class="divider"/> 
-  
+  <h2>Your Surveys</h2>
+  <hr class="divider"/>
+  <table class="your-surveys">
+  <% @surveys.each do | survey | %>
+  <tr>
+    <td><%= survey.title %></td>
+    <td><%= survey.description %></td>
+    <td>
+      <a href="/survey/respond/<%= survey.id %>" alt"View the results of <%= survey.title %>">
+        View Survey
+      </a>
+    </td>
+    <td>
+      <a href="/survey/results/<%= survey.id %>" alt"View the results of <%= survey.title %>">
+        View Results
+      </a>
+    </td>
+    <td>Edit</td>
+  </tr>
+  <% end %>
+  </table>
 </div>
+ 
+
 
 <div id="participant-results">
   <h2>Surveys You've Participated In</h2>

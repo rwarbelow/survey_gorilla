@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   def edit_attributes(params = {})
     params.tap { |item| item.delete(:password) } if params[:password].nil?
     self.update_attributes(params)
+    self.save
   end
   
 end

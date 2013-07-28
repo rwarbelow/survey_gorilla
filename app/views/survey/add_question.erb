@@ -1,5 +1,5 @@
-<div class='container'>
-  <h3><%=@survey.title%></h3>
+  <h1><%=@survey.title%></h1>
+  <h2 class="italics"><%= @survey.description %></h2>
   <%= erb :"question/_create", layout: false, locals: {survey: @survey} %>
   <div id='questions'>
     <% @survey.questions.each_with_index do |question, index| %>
@@ -9,4 +9,3 @@
       </div>
     <% end %>
   </div>
-</div>
