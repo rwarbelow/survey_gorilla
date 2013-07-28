@@ -1,6 +1,6 @@
 <div class="dash-nav">
-  <a href="/profile/<%=current_user.id %>/edit">Edit your profile.</a> 
-  <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your profile.</a>
+  <a href="/profile/<%=current_user.id %>/edit">Edit your information</a> |
+  <a href="/profile/<%= current_user.id %>/delete" alt="Delete your profile">Delete your account</a>
 </div>
 
 <h1 class="dash-welcome">Hi, <%= current_user.first_name %>!</h1>
@@ -23,14 +23,16 @@
     <input type="submit" value="Let's go!">
   </form>
 </div>
-
+<hr class="divider"/>
 <div id="own-results">
-  <h2>Your Survey Results</h2>
-  
-  <hr class="divider"/> 
-  
+  <h2>Your Surveys</h2>
+  <ul>
+    <% @surveys.each do | survey | %>
+      <li><%= survey.title %></li>
+    <% end %>
+  </ul> 
 </div>
-
+<hr class="divider"/> 
 <div id="participant-results">
   <h2>Surveys You've Participated In</h2>
   <hr class="divider"/>
