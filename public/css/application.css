@@ -41,6 +41,7 @@ tr:nth-child(odd) {
 
 th {
   font-style: oblique;
+  text-align: left;
 }
 
 /* FORM STYLES */
@@ -233,6 +234,14 @@ header #nav {
   width: 100%;
 }
 
+.question {
+  margin-top: 20px;
+}
+
+.question form {
+  margin-top: 10px;
+}
+
 #add-question input[type=submit] {
   float: left;
   margin-right: 20px;
@@ -251,7 +260,15 @@ header #nav {
 }
 
 #questions input:not([type=submit]) {
-  width: 100%;
+  width: 50%;
+}
+
+#questions input[type=radio] {
+  width: 20px;
+}
+
+#questions input[type=checkbox] {
+  width: 20px;
 }
 
 #questions input[type=submit] {

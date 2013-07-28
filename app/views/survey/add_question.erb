@@ -4,7 +4,7 @@
   <div id='questions'>
     <% @survey.questions.each_with_index do |question, index| %>
       <div id='<%=question.id%>' class='question'>
-        <span><%= index + 1 %></span>
+        <span><%= index + 1 %>.</span>
         <%= erb :"#{question.partial}", layout: false, locals: {question: question} %>
       </div>
     <% end %>

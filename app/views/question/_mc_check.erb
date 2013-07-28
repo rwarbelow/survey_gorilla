@@ -4,6 +4,6 @@
   <% end %>
 </p>
 <% question.responses.each do |response| %>
-  <input type="checkbox" name="survey[<%= question.id%>][]" value="<%= response.text %>" >
-  <span><%= response.text %></span>
+  <input type="checkbox" name="survey[<%= question.id%>][]" value="<%= response.text %>">
+  <span><%= response.text %></span><br>
 <% end %>

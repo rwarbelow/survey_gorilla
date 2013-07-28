@@ -5,5 +5,5 @@
 </p>
 <% question.responses.each do |response| %>
   <input type="radio" name="survey[<%= question.id %>]" value="<%= response.text %>" >
-  <span><%= response.text %></span>
+  <span><%= response.text %></span><br>
 <% end %>
