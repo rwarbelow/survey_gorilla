@@ -4,4 +4,11 @@ class Response < ActiveRecord::Base
   delegate :survey, to: :question
 
   validates :text, presence: true
+
+  def percent
+    users_who_chose_response = self.votes.count
+    users_who_participated = self.survey.participants.size
+    percent = (users_who_chose_response / users_who_participated.to_f * 100).round
+  end
+
 end

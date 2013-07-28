@@ -8,10 +8,12 @@
   <table>
    <th>Response</th>
    <th>Response Count</th>
+   <th>Response Percent</th>
   <% question.responses.each do |response| %>
   <tr>
     <td><%= response.text %></td>
     <td><%= response.votes.count %></td>
+    <td><%= response.percent %>%</td>
   </tr>
   <% end %>
   </table>
