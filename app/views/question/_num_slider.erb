@@ -4,5 +4,5 @@
   <form id='delete' action='/question/<%=question.id%>/delete' method='post'><input type='submit' value='Delete'></form><form id='edit' action='/question/<%=question.id%>/edit' method='get'><input type='submit' value='Edit'></form>
   <% end %>
 </p>
-<input type="range" name="survey[<%= question.id %>]" min="0" max="10">
+<input type="range" name="survey[<%= question.id %>]" min="1" max="10">
 </div></li>
