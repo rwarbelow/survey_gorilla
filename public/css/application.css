@@ -300,6 +300,7 @@ footer nav {
 .survey_responses li table {
   color: #222;
   font-weight: 400;
+  margin-bottom: 20px;
   width: 100%;
 }
 
