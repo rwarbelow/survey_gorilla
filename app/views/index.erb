@@ -1,4 +1,7 @@
 <div class="welcome">
+  <% if @alert %>
+  <h2 class='thanks'><%= @alert %></h2>
+  <% end %>
   <h1>Welcome to SurveyGorilla!</h1>
   <h3 class="tagline italics">Survey creation so simple even a monkey could do it.</h3>
 </div>
