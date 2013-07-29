@@ -11,7 +11,7 @@ class NumSlider < Question
   def chart_data
     chart_data = {labels: [1,2,3,4,5,6,7,8,9,10], data: [0,0,0,0,0,0,0,0,0,0]}
     self.responses.each do |response|
-      chart_data[:data][response.text.to_i - 1] += 1
+      chart_data[:data][response.text.to_i - 1] += response.votes.count
     end
     chart_data
   end

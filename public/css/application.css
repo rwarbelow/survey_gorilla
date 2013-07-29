@@ -133,6 +133,11 @@ header #nav, footer nav {
   width: 100%;
 }
 
+.thanks {
+  text-align: center;
+  color: #41a30d;
+}
+
 /* Footer */
 footer, #content:after {
   height: 42px;

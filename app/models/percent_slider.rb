@@ -13,7 +13,7 @@ class PercentSlider < Question
     counts = Array.new(100, 0)
     chart_data = {labels: numbers, data: counts}
     self.responses.each do |response|
-      chart_data[:data][response.text.to_i - 1] += 1
+      chart_data[:data][response.text.to_i - 1] += response.votes.count
     end
     chart_data
   end

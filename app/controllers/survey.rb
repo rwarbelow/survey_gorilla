@@ -21,6 +21,7 @@ post '/survey/respond/:survey_id' do
     question.create_vote(answer, params[:email])
   end
   Survey.find(params[:survey_id]).add_count
+  session[:completed] = true
   redirect to('/')
 end
 
