@@ -14,5 +14,13 @@ class McRadio < Question
     response = Response.find_by_text_and_question_id(answer, self.id)
     response.votes.create(user_email: email)
   end
-  
+
+  def chart_data
+    chart_data = {labels: [], data: []}
+    self.responses.each do |response|
+      chart_data[:labels] << response.text
+      chart_data[:data] << response.votes.count
+    end
+    chart_data
+  end
 end

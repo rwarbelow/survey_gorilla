@@ -9,21 +9,6 @@ post '/survey/create' do
   end
 end
 
-## Edit a survey
-get '/survey/:survey_id/edit' do
-end
-
-post '/survey/:survey_id/edit' do
-end
-
-## Delete a survey
-post 'survey/:survey_id/delete' do
-end
-
-## End a survey
-post '/survey/:survey_id/end' do
-end
-
 ## Respond to a survey
 get '/survey/respond/:survey_id' do
   @survey = Survey.find(params[:survey_id])
