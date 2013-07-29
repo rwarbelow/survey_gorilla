@@ -3,8 +3,12 @@
   <h3 class="tagline italics">Survey creation so simple even a monkey could do it.</h3>
 </div>
 
-<form id='sign-up' action='/register' method='get'><input type='submit' value="Sign Up to create surveys, and see survey results!"></form>
-<h2>Already a member? <a href="/login" alt="Log in to your account">Login to your account</a></h2>
+<div class="call-to-action">
+  <form id='sign-up' action='/register' method='get'>
+    <input type='submit' value="Sign Up to create surveys, and see survey results!">
+  </form>
+<h2 class="center">Already a member? <a href="/login" alt="Log in to your account">Login to your account</a></h2>
+</div>
 
 <% if @new_surveys %>
 <div class='survey-category'>
