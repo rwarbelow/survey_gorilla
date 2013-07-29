@@ -144,6 +144,7 @@ footer p {
 
 #content {
   margin: 40px 5% 0px 5%;
+  min-height: 800px;
   min-width: 600px;
 }
 
