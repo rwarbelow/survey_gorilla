@@ -17,7 +17,7 @@
   </tr>
   <% end %>
   </table>
-  <% unless question.type == 'TextArea' %>
+  <% unless question.type == 'TextArea' || question.type == 'ShortResponse' %>
   <form id='<%=question.id%>' class='chart' action='/question/<%=question.id%>/chart' method='get'><input type='submit' value='Show Chart'></form>
   <% end %>
 <% else %>
