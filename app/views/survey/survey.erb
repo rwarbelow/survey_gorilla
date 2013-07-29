@@ -9,7 +9,7 @@
   <div class='submit-survey'>
     <% if !logged_in? %>
       <label for="email">Email Address:
-        <input type='text' name='email' placeholder='E-Mail Address'>
+        <input type='text' name='email' placeholder='E-Mail Address' required>
      </label>
     <% else %>
       <input type='hidden' name='email' value='<%=current_user.email%>'>

@@ -92,9 +92,9 @@ $(document).ready(function(){
       labels : response.labels,
       datasets : [
         {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,1)",
-        pointColor : "rgba(151,187,205,1)",
+        fillColor : "rgba(65,163,13,0.5)",
+        strokeColor : "rgba(65,163,13,1)",
+        pointColor : "rgba(65,163,13,1)",
         pointStrokeColor : "#fff",
         data : response.data
         }
