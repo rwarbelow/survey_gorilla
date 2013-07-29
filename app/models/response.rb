@@ -1,7 +1,7 @@
 class Response < ActiveRecord::Base
   belongs_to :question
   has_many :votes, dependent: :destroy
-  delegate :survey, to: :question
+  has_one :survey, through: :question
 
   def percent
     users_who_chose_response = self.votes.count

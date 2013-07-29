@@ -3,6 +3,7 @@ class Survey < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   has_many :responses, through: :questions
   has_many :votes, through: :responses
+  # has_many :participants, through: :votes, source: :user
 
   validates :title, presence: true
   
