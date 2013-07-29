@@ -44,13 +44,8 @@ $(document).ready(function(){
           $(this).parent().remove();
         });
       }
-      // if (type == 'ShortResponse'){
-      //   $("#create").show();
-      //   $("#add-option").hide();
-      //   $('#options').hide();
-      //   $('#responses').show();
-      // }
     });
+    
     $('#create').off();
     $('#create').on('click', function(event){
       event.stopPropagation();
@@ -70,6 +65,7 @@ $(document).ready(function(){
       resetForm();
     });
   });
+  
   $('#delete').off();
   $('#delete').on('submit', function(event){
     event.preventDefault();
@@ -78,6 +74,7 @@ $(document).ready(function(){
     $(this).closest('.question').parent().remove();
     $.post(url);
   });
+  
   $('.chart').off();
   $('.chart').on('submit', function(event){
     event.preventDefault();
