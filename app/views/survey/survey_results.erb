@@ -11,15 +11,18 @@
    <th>Response Percent</th>
   <% question.responses.each do |response| %>
   <tr>
-    <td><%= response.text %></td>
-    <td><%= response.votes.count %></td>
+    <td id='label'><%= response.text %></td>
+    <td id='count'><%= response.votes.count %></td>
     <td><%= response.percent %>%</td>
   </tr>
   <% end %>
   </table>
-</li>
+  <% unless question.type == 'TextArea' %>
+  <form id='<%=question.id%>' class='chart' action='/question/<%=question.id%>/chart' method='get'><input type='submit' value='Show Chart'></form>
+  <% end %>
 <% else %>
 <p class="no-response">This question currently has no responses.</p>
 <% end %>
+</li>
 <% end %>
 </ol>

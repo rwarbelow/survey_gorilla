@@ -17,4 +17,13 @@ class McCheck < Question
     end
   end
 
+  def chart_data
+    chart_data = {labels: [], data: []}
+    self.responses.each do |response|
+      chart_data[:labels] << response.text
+      chart_data[:data] << response.votes.count
+    end
+    chart_data
+  end
+
 end
