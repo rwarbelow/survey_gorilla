@@ -78,4 +78,28 @@ $(document).ready(function(){
     $(this).closest('.question').parent().remove();
     $.post(url);
   });
+  $('#chart').off();
+  $('#chart').on('submit', function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    $(this).hide();
+    var that = $(this)
+    var url = $(this).attr('action');
+    $.get(url, function(response){
+      that.before('<canvas id="myChart" width="800" height="400"></canvas>')
+      var data = {
+      labels : response.labels,
+      datasets : [
+        {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : response.data
+        }
+        ]
+      }
+      var myLine = new Chart(document.getElementById("myChart").getContext("2d")).Bar(data);
+    });
+  });
 });

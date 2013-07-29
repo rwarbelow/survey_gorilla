@@ -3,8 +3,6 @@ class Response < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   delegate :survey, to: :question
 
-  validates :text, presence: true
-
   def percent
     users_who_chose_response = self.votes.count
     users_who_participated = self.survey.participants.size

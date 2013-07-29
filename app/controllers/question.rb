@@ -8,6 +8,13 @@ get '/survey/create/:survey_id/add_question' do
   erb :"survey/add_question"
 end
 
+get '/question/:question_id/chart' do
+  @question = Question.find(params[:question_id])
+  chart_data = @question.chart_data
+  content_type :json
+  chart_data.to_json
+end
+
 post '/survey/create/:survey_id/add_question' do
   @survey = Survey.find(params[:survey_id])
   @question = params[:question][:type].constantize.create(text: params[:question][:text], survey_id: @survey.id)
