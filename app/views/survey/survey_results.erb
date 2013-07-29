@@ -18,7 +18,7 @@
   <% end %>
   </table>
   <% unless question.type == 'TextArea' %>
-  <form id='chart' action='/question/<%=question.id%>/chart' method='get'><input type='submit' value='Show Chart'></form>
+  <form id='<%=question.id%>' class='chart' action='/question/<%=question.id%>/chart' method='get'><input type='submit' value='Show Chart'></form>
   <% end %>
 <% else %>
 <p class="no-response">This question currently has no responses.</p>

@@ -78,15 +78,16 @@ $(document).ready(function(){
     $(this).closest('.question').parent().remove();
     $.post(url);
   });
-  $('#chart').off();
-  $('#chart').on('submit', function(event){
+  $('.chart').off();
+  $('.chart').on('submit', function(event){
     event.preventDefault();
     event.stopPropagation();
     $(this).hide();
-    var that = $(this)
+    var that = $(this);
+    var id = $(this).attr('id');
     var url = $(this).attr('action');
     $.get(url, function(response){
-      that.before('<canvas id="myChart" width="800" height="400"></canvas>')
+      that.before('<canvas id="myChart'+ id +'" width="800" height="400"></canvas>')
       var data = {
       labels : response.labels,
       datasets : [
@@ -99,7 +100,7 @@ $(document).ready(function(){
         }
         ]
       }
-      var myLine = new Chart(document.getElementById("myChart").getContext("2d")).Bar(data);
+      var myLine = new Chart(document.getElementById("myChart"+ id).getContext("2d")).Bar(data);
     });
   });
 });
