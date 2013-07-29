@@ -3,23 +3,27 @@
   <h3 class="tagline italics">Survey creation so simple even a monkey could do it.</h3>
 </div>
 
-<form id='sign-up' action='/register' method='get'><input type='submit' value="Sign Up to create surveys, and see survey results!"></form>
-<h2>Already a member? <a href="/login" alt="Log in to your account">Login to your account</a>
+<div class="call-to-action">
+  <form id='sign-up' action='/register' method='get'>
+    <input type='submit' value="Sign Up to create surveys, and see survey results!">
+  </form>
+<h2 class="center">Already a member? <a href="/login" alt="Log in to your account">Login to your account</a></h2>
+</div>
 
 <% if @new_surveys %>
 <div class='survey-category'>
-  <h2>Check out these new surveys.</h2>
+  <h1>Check out these new surveys.</h1>
   <% @new_surveys.each do |survey| %>
-    <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, created <%=survey.created_at.strftime('%B %d')%></p>
+    <h2><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, created <%=survey.created_at.strftime('%B %d')%></h2>
   <% end %>
 </div>
 <% end %>
 
 <% if @popular_surveys %>
 <div class='survey-category'>
-  <h2>These surveys are super popular.</h2>
+  <h1>These surveys are super popular.</h1>
   <% @popular_surveys.each do |survey| %>
-    <p><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, <%=survey.participant_count%> responses</p>
+    <h2><a href='/survey/respond/<%=survey.id%>'><%= survey.title %></a>, <%=survey.participant_count%> responses</h2>
   <% end %>
 </div>
 <% end %>
